@@ -2,9 +2,7 @@ var _ = require('lodash');
 var restifyValidation = require('node-restify-validation');
 
 var defaultOptions = {
-  errorsAsArray: true,
-  errorHandler: true,
-  forbidUndefinedVariables: false
+  errorsAsArray: true
 };
 
 module.exports = function(options) {

@@ -24,3 +24,24 @@ swaggerTools.initializeMiddleware(swaggerDoc, function(middleware) {
   // snip...
 });
 ```
+
+You can now use `x-restify-validation` on your Swagger Operation objects to specify your node-restify-validation rules.
+```
+swagger: "2.0",
+paths: {
+  "/api/resource": {
+    get: {
+      operationId: "resource",
+      parameters: [
+        {name: "str", type: "string", in: "query"}
+      ]
+      "x-restify-validation": {
+        str: {
+          isAlpha: true
+        }
+      }
+    }
+  }
+}
+
+```
